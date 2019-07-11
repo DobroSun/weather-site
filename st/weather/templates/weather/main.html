@@ -5,6 +5,10 @@
     <title>Weather</title>
 </head>
 <body>
-It works!
+    <form method="POST" class="'post-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="'save btn btn-default">OK</button>
+    </form>
 </body>
 </html>

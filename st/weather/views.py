@@ -1,6 +1,8 @@
 from django.shortcuts import render
+from .forms import CityForm
 from django.http import HttpResponse
 
 
 def archive(request):
-    return render(request, 'weather/main.html', {})
+    form = CityForm
+    return render(request, 'weather/main.html', {'form': form})
