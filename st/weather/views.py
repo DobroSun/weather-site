@@ -31,10 +31,17 @@ def results(request, city, country):
         res = requests.get(http, params={'q': s_city, 'type': 'like', 'units': 'metric', 'APPID': my_key})
         data = res.json()
 
-        print(data['list'])
-        dict_ = data['list'][0]
+        context = {}
+        for k in data['list'][0]:
+            if type(data['list'][0][k]) is type({}):
+                for i in data['list'][0][k]:
+                    context[i] = data['list'][0][k][i]
+            else:
+                context[k] = data['list'][0][k]
+        print(context)
 
-        return render(request, 'weather/forecast.html', {})
+        return render(request, 'weather/forecast.html', context)
+
     except Exception as e:
         form = CityForm
         exception = True
