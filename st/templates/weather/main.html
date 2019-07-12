@@ -10,5 +10,9 @@
         {{ form.as_p }}
         <button type="submit" class="'save btn btn-default">OK</button>
     </form>
+{% if exception %}
+    <p>There is no such city.</p>
+    <p>Try again</p>
+{% endif %}
 </body>
 </html>
