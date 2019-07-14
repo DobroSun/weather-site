@@ -1,18 +1,55 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="{% static 'weather/style.css' %}" />
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
     <title>Weather</title>
+
+
+
 </head>
 <body>
-    <form method="POST" class="'post-form">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="'save btn btn-default">OK</button>
-    </form>
-{% if exception %}
-    <p>There is no such city.</p>
-    <p>Try again</p>
-{% endif %}
+    <div class="block1">
+        <div class="container">
+            <div class="row">
+                <div class="column">
+                    <h3>
+                        Введите название своего города, например: Minsk,BY или London,GB
+                    </h3>
+                    <form method="POST" class="post-form">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit" class="save btn btn-default">OK</button>
+                        </form>
+                        {% if exception %}
+                        <h4>Нет такого города.</h4>
+                        <h4>Попробуйте снова.</h4>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div>
+        <ul>
+            <h3>
+                <li>
+                    <a href="Minsk,BY/results">Minsk</a>
+                </li>
+            </h3>
+        </ul>
+    </div>
+
+
 </body>
+
 </html>

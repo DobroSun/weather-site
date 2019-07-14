@@ -14,17 +14,15 @@ def archive(request):
     if request.method == 'POST':
         form = CityForm(request.POST or None)
         if form.is_valid():
-            print(type(form.cleaned_data))
-            name = form.cleaned_data['name']
-            country = form.cleaned_data['country']
-            return redirect(reverse('results', kwargs={'city': name, 'country': country}))
+            city = form.cleaned_data['city']
+            return redirect(reverse('results', kwargs={'city': city}))
 
     return render(request, 'weather/main.html', {'form': form, 'exception': exception})
 
 
-def results(request, city, country):
+def results(request, city):
     import requests
-    s_city = city + "," + country
+    s_city = city
     http = "http://api.openweathermap.org/data/2.5/find"
     my_key = '1569e3dffe0719b6eaa0ea8b58723ca7'
     try:

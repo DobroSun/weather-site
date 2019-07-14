@@ -3,8 +3,5 @@ from django import forms
 
 
 
-class CityForm(forms.ModelForm):
-
-    class Meta():
-        model = City
-        fields = ('name', 'country',)
+class CityForm(forms.Form):
+    city = forms.CharField()
