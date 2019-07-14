@@ -10,25 +10,29 @@
       <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
       <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 
-  </head>
-  <body>
-  <div class="mycont">
+  <div class="block2">
     <div class="container">
         <div class="row">
             <div class="column">
-                In {{ name }} is {{ temp }}
-
-
-                <h2>
-                    <input id="pole" type="text" name="name" />
-                    <a href="#" onClick="document.getElementById('pole').value = 'zapolneno!'">ссылка</a>
-                </h2>
-
-
+                В городе {{ name }} сейчас {{ temp }} °C,
+                Влажность около {{ humidity }}%.
+                {% if rain %}
+                    Идет дождь.
+                {% else %}
+                    Нет дождя.
+                {% endif %}
+                {% if snow %}
+                    Идет снег.
+                {% else %}
+                    Нет снега.
+                {% endif %}
             </div>
         </div>
     </div>
   </div>
+  </head>
+  <body>
+
 
   </body>
 </html>

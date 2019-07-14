@@ -42,5 +42,4 @@ def results(request, city):
 
     except Exception as e:
         form = CityForm
-        exception = True
-        return render(request, 'weather/main.html', {'form': form, 'exception': exception})
+        return render(request, 'weather/exception.html', {})

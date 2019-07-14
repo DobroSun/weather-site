@@ -1,10 +1,10 @@
-.mycont {
-    width: 600px;
+.block2 {
+    padding: 40px;
     background: #ccc;
-    padding: 5px;
-    padding-right: 100px;
-    border: solid 10px black;
-    float: left;
+    position: fixed; top: 7%; left: 35%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 
 .block1 {
@@ -17,9 +17,11 @@
 }
 
 html, body {
-    margin-top: 170px;
+    background-image: url(templates/weather/image);
+    margin-top: 200px;
     margin-right: 200px;
     margin-bottom: 200px;
     margin-left: 310px;
     font-family: 200% Fantasy;
+    ;
 }

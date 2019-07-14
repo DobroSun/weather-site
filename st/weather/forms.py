@@ -1,7 +1,6 @@
-from .models import City
 from django import forms
 
 
 
 class CityForm(forms.Form):
-    city = forms.CharField()
+    city = forms.CharField(max_length=92)
