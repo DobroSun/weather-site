@@ -1,3 +1,11 @@
+html {
+    background-color: bisque;
+}
+
+body {
+    background-color: #ccc;
+}
+
 .block2 {
     padding: 40px;
     background: #ccc;
@@ -24,4 +32,8 @@ html, body {
     margin-left: 310px;
     font-family: 200% Fantasy;
     ;
+}
+
+.block3 {
+    background-color: #ccc
 }
